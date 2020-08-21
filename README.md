@@ -55,8 +55,4 @@ Project Organization
        ├──0-cartpole                              
        └──1-atari_games
 
-## Environment set up
 
-TODO
-
-<p><small>Project based on the <a target="_blank" href="http://git.equancy.io/tools/cookiecutter-data-science-project/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
