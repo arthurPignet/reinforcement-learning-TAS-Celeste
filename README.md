@@ -6,7 +6,9 @@ DISCLAIMER: This work is in progress. We have a lot to do/ to learn, and we are 
 This project aims to create an AI capable of creating a *tool-assisted speedrun* of the plateform game [Celeste](http://www.celestegame.com/). 
 
 Few definitions :
+
 A *speedrun* is an instance of completing a video game, or level of a game, as fast as possible. 
+
 A tool-assisted speedrun or tool-assisted superplay (TAS) is generally defined as speedrunning a game in an emulator with the goal of creating a theoretically perfect playthrough. As the name implies, a TAS is not performed by an actual human being, but rather by a program or a piece of software that delivers frame-perfect optimized controller input to complete the game in the fastest way possible
 
 Here, our main goal is to design a algorithm which play the game, and learn how to finish it as fast as possible, with reinforcement learning.
