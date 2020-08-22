@@ -1,6 +1,6 @@
-import gym
 import time
 
+import gym
 import matplotlib.pyplot as plt
 import numpy as np
 
