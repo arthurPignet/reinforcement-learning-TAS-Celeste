@@ -1,12 +1,14 @@
 import gym
+import time
 
+import matplotlib.pyplot as plt
 import numpy as np
 
 from agent import DQNSolver
 
 ENV_NAME = "CartPole-v1"
 
-EPOCH = 100
+EPOCH = 1000
 
 GAMMA = 0.95
 LEARNING_RATE = 0.001
@@ -17,9 +19,11 @@ BATCH_SIZE = 20
 EXPLORATION_MAX = 1.0
 EXPLORATION_MIN = 0.01
 EXPLORATION_DECAY = 0.995
+SCORE = [0 for _ in range(EPOCH)]
 
 
 def cartpole():
+    timer = time.time()
     env = gym.make(ENV_NAME)
     observation_space = env.observation_space.shape[0]
     action_space = env.action_space.n
@@ -50,8 +54,13 @@ def cartpole():
             if terminal:
                 print(
                     "Run: " + str(run) + ", exploration: " + str(dqn_solver.exploration_rate) + ", score: " + str(step))
+                SCORE[run] = step
                 break
             dqn_solver.fit()
+    print('Executing time : %s' % (time.time() - timer))
+    plt.figure(1)
+    plt.plot([i for i in range(EPOCH)], SCORE)
+    plt.show()
 
 
 if __name__ == "__main__":
