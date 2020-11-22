@@ -1,3 +1,6 @@
-keras
-numpy
-gym
+keras~=2.3.1
+numpy~=1.19.1
+gym~=0.17.2
+
+keyboard~=0.13.5
+matplotlib~=3.3.1
