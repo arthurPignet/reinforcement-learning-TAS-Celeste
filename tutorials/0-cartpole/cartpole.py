@@ -8,7 +8,7 @@ from agent import DQNSolver
 
 ENV_NAME = "CartPole-v1"
 
-EPOCH = 1000
+EPOCH = 100
 
 GAMMA = 0.95
 LEARNING_RATE = 0.001
@@ -37,17 +37,17 @@ def cartpole():
                            memory_size=MEMORY_SIZE,
                            batch_size=BATCH_SIZE)
     run = 0
-    while run < EPOCH:
+    while run < EPOCH-1:
         run += 1
         state = env.reset()
         state = np.reshape(state, [1, observation_space])
         step = 0
         while True:
             step += 1
-            env.render()
+            #env.render()
             action = dqn_solver.act(state)
             state_next, reward, terminal, info = env.step(action)
-            reward = reward if not terminal else -reward  # si terminal c'est que l'on a échoué, on punit
+            reward = reward if not terminal else -reward*10  # si terminal c'est que l'on a échoué, on punit
             state_next = np.reshape(state_next, [1, observation_space])
             dqn_solver.add_to_memory(state, action, reward, state_next, terminal)
             state = state_next
@@ -57,7 +57,7 @@ def cartpole():
                 SCORE[run] = step
                 break
             dqn_solver.fit()
-    print('Executing time : %s' % (time.time() - timer))
+    print('Execution time : %s' % (time.time() - timer))
     plt.figure(1)
     plt.plot([i for i in range(EPOCH)], SCORE)
     plt.show()
