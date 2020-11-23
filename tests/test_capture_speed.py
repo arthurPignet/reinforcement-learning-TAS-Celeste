@@ -2,9 +2,11 @@ import time
 import cv2
 from src.game_output.capture import GameCapture
 
+
 def shown(frame):
-  cv2.imshow("window", frame)
-  cv2.waitKey()
+    cv2.imshow("window", frame)
+    cv2.waitKey()
+
 
 if __name__ == '__main__':
     capturator = GameCapture()
@@ -17,5 +19,3 @@ if __name__ == '__main__':
     print(f"100 frames captured in {time.time() - start_time} s.")
     capturator.kill()
     shown(history_frames[0])
-
-
