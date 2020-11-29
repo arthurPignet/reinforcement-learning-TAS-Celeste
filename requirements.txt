@@ -1,9 +1,12 @@
-keras~=2.3.1
 numpy~=1.19.1
+keras~=2.3.1
 gym~=0.17.2
 
 matplotlib~=3.3.1
-pillow~=7.2.0
 
 
+# related to game's input
 keyboard~=0.13.5
+# related to game's output
+pillow~=7.2.0
+d3dshot~=0.1.5
