@@ -27,7 +27,7 @@ def cartpole():
     env = gym.make(ENV_NAME)
     observation_space = env.observation_space.shape[0]
     action_space = env.action_space.n
-    dqn_solver = DQNSolver(observation_space,
+    dqn_solver = DQNbSolver(observation_space,
                            action_space,
                            learning_rate=LEARNING_RATE,
                            gamma=GAMMA,

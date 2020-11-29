@@ -1,8 +1,7 @@
 import time
-import numpy as np
 import cv2
 import d3dshot
-from src.game_output.capture import get_celeste_region
+from src.env.game_output.capture import get_celeste_region
 
 def shown(frame):
     cv2.imshow("window", frame)
@@ -20,4 +19,4 @@ if __name__ == '__main__':
         history_frames.append(d.get_latest_frame())
     d.stop()
     print(f"100 frames captured in {time.time() - start_time} s.")
-    shown(history_frames[0])
+    #shown(history_frames[0])
