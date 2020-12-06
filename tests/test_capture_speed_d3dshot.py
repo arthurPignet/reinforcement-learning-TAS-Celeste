@@ -1,7 +1,7 @@
 import time
 import cv2
 import d3dshot
-from src.env.game_output.capture import get_celeste_region
+from src.environment.game_output.capture import get_celeste_region
 
 def shown(frame):
     cv2.imshow("window", frame)

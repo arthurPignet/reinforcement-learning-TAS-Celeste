@@ -1,7 +1,7 @@
 import time
 import matplotlib.pyplot as plt
 import d3dshot
-from src.env.game_output.capture import get_celeste_region
+from src.environment.game_output.capture import get_celeste_region
 import numpy as np
 
 if __name__ == '__main__':
